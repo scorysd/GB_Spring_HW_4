@@ -20,9 +20,9 @@ public class BookRepository {
   @PostConstruct
   public void generateData() {
     books.addAll(List.of(
-      new Book("война и мир", "Толстой"),
-      new Book("метрвые души", "Гоголь"),
-      new Book("чистый код", "Мартин")
+      new Book("War and peace", "Tolstoy"),
+      new Book("Dead soul", "GO GO l"),
+      new Book("Clear code", "Martin")
     ));
   }
 

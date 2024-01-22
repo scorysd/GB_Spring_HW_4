@@ -1,6 +1,7 @@
 package gb.hw.hw_2.Controllers;
 
 import gb.hw.hw_2.Models.Book;
+import gb.hw.hw_2.Models.Issue;
 import gb.hw.hw_2.Models.Reader;
 import gb.hw.hw_2.Services.BookService;
 import gb.hw.hw_2.Services.ReaderService;
@@ -38,6 +39,10 @@ public class ReaderController {
     @DeleteMapping("/{id}")
     public List<Reader> deleteReader(@PathVariable long id){
         return readerService.deleteReader(id);
+    }
+    @GetMapping("/{id}/issue")
+    public List<Issue> readerIssue(@PathVariable long id){
+        return readerService.
     }
 
 

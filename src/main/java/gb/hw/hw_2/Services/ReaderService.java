@@ -1,6 +1,7 @@
 package gb.hw.hw_2.Services;
 
 
+import gb.hw.hw_2.Models.Issue;
 import gb.hw.hw_2.Models.Reader;
 import gb.hw.hw_2.Repository.ReaderRepository;
 import lombok.RequiredArgsConstructor;
@@ -29,4 +30,9 @@ public class ReaderService {
         repository.deleteReader(id);
         return repository.getAllReader();
     }
+
+    public List<Issue> readerIssue(long id){
+
+    }
+
 }
