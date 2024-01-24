@@ -13,6 +13,10 @@ public class Issue {
     private final long bookId;
     private final long readerId;
 
+    public LocalDateTime getTimeStamp() {
+        return timeStamp;
+    }
+
     private final LocalDateTime timeStamp;
 
     public Issue(long bookId, long readerId) {

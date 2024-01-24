@@ -2,6 +2,8 @@ package gb.hw.hw_2.Repository;
 
 import org.springframework.stereotype.Repository;
 import gb.hw.hw_2.Models.Issue;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -23,6 +25,12 @@ public class IssueRepository {
     return issues.stream().filter(it -> Objects.equals(it.getId(), id))
             .findFirst()
             .orElse(null);
+  }
+  public List<Issue> getAllIssues(){
+    return List.copyOf(issues);
+  }
+  public LocalDateTime getIssueTime(long id){
+    return getIssueById(id).getTimeStamp();
   }
 
 }

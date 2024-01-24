@@ -1,7 +1,9 @@
 package gb.hw.hw_2.Services;
 
 import gb.hw.hw_2.Models.Book;
+import gb.hw.hw_2.Models.IssuesBooks;
 import gb.hw.hw_2.Repository.BookRepository;
+import gb.hw.hw_2.Repository.IssuesBookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BookService {
     private final BookRepository bookRepository;
+    private final IssuesBookRepository issuesBookRepository;
 
     public List<Book> getAllBook(){
         return bookRepository.getAllBooks();
@@ -25,4 +28,6 @@ public class BookService {
         bookRepository.deleteBook(id);
         return bookRepository.getAllBooks();
     }
+
+
 }

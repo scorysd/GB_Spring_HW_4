@@ -40,10 +40,10 @@ public class ReaderController {
     public List<Reader> deleteReader(@PathVariable long id){
         return readerService.deleteReader(id);
     }
-    @GetMapping("/{id}/issue")
-    public List<Issue> readerIssue(@PathVariable long id){
-        return readerService.
-    }
+//    @GetMapping("/{id}/issue")
+//    public List<Issue> readerIssue(@PathVariable long id){
+//        return readerService.readerIssue(id);
+//    }
 
 
 

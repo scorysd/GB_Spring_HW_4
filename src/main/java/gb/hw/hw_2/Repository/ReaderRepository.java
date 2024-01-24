@@ -1,6 +1,5 @@
 package gb.hw.hw_2.Repository;
 
-import gb.hw.hw_2.Models.Book;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Repository;
 import gb.hw.hw_2.Models.Reader;
@@ -21,7 +20,10 @@ public class ReaderRepository {
     @PostConstruct
     public void generateData() {
         readers.addAll(List.of(
-                new gb.hw.hw_2.Models.Reader("Roman")
+                new gb.hw.hw_2.Models.Reader("Roman"),
+        new gb.hw.hw_2.Models.Reader("Pavel"),
+        new gb.hw.hw_2.Models.Reader("Petr"),
+        new gb.hw.hw_2.Models.Reader("Maria")
         ));
     }
 
@@ -56,5 +58,8 @@ public class ReaderRepository {
         } else {
             exist.setBooksOnHands(exist.getBooksOnHands() + 1);
         }
+    }
+    public String getNameReader(long id){
+        return getReaderById(id).getName();
     }
 }

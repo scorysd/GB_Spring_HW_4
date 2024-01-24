@@ -2,11 +2,13 @@ package gb.hw.hw_2.Services;
 
 
 import gb.hw.hw_2.Models.Issue;
+import gb.hw.hw_2.Models.IssuesBooks;
 import gb.hw.hw_2.Models.Reader;
 import gb.hw.hw_2.Repository.ReaderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -31,8 +33,6 @@ public class ReaderService {
         return repository.getAllReader();
     }
 
-    public List<Issue> readerIssue(long id){
 
-    }
 
 }

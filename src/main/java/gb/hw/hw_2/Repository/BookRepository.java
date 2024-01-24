@@ -11,41 +11,47 @@ import java.util.Objects;
 @Repository
 public class BookRepository {
 
-  private final List<Book> books;
+    private final List<Book> books;
 
-  public BookRepository() {
-    this.books = new ArrayList<>();
-  }
+    public BookRepository() {
+        this.books = new ArrayList<>();
+    }
 
-  @PostConstruct
-  public void generateData() {
-    books.addAll(List.of(
-      new Book("War and peace", "Tolstoy"),
-      new Book("Dead soul", "GO GO l"),
-      new Book("Clear code", "Martin")
-    ));
-  }
+    @PostConstruct
+    public void generateData() {
+        books.addAll(List.of(
+                new Book("War and peace", "Tolstoy"),
+                new Book("Dead soul", "GO GO l"),
+                new Book("Clear code", "Martin")
+        ));
+    }
 
-  public Book getBookById(long id) {
-    return books.stream().filter(it -> Objects.equals(it.getId(), id))
-      .findFirst()
-      .orElse(null);
-  }
+    public Book getBookById(long id) {
+        return books.stream().filter(it -> Objects.equals(it.getId(), id))
+                .findFirst()
+                .orElse(null);
+    }
 
-  public List<Book> getAllBooks(){
-    return List.copyOf(books);
-  }
-  public void createBook(String name, String author){
-    books.add(new Book(name, author));
-  }
+    public List<Book> getAllBooks() {
+        return List.copyOf(books);
+    }
 
-  public List<Book> deleteBook(long id) {
-      Book exist = getBookById(id);
-      if (exist == null) {
-        System.out.println("Do not exist Book!");
-      } else {
-        books.remove(exist);
-      }
-      return books;
+    public void createBook(String name, String author) {
+        books.add(new Book(name, author));
+    }
+
+    public List<Book> deleteBook(long id) {
+        Book exist = getBookById(id);
+        if (exist == null) {
+            System.out.println("Do not exist Book!");
+        } else {
+            books.remove(exist);
+        }
+        return books;
+    }
+
+    public String getNameBook(long id) {
+        return getBookById(id).getName();
+
     }
 }
