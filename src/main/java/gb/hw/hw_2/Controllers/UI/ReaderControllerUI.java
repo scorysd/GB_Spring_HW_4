@@ -13,20 +13,15 @@ import java.util.List;
 @RequestMapping("/ui")
 public class ReaderControllerUI {
     private final ReaderService readerService;
+
     private ReaderControllerUI(ReaderService readerService) {
         this.readerService = readerService;
     }
 
     @GetMapping("/readers")
-    public String tableReader(Model model){
+    public String tableReader(Model model) {
         List<Reader> readers = readerService.getAllReader();
         model.addAttribute("readers", readers);
         return "readers";
     }
-//    @GetMapping("/readers/{id}")
-//    public String booksReader(Model model){
-//        List<Reader> readers = readerService.getAllReader();
-//        model.addAttribute("readers", readers);
-//        return "readers";
-//    }
 }
